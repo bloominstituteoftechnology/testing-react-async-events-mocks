@@ -7,8 +7,8 @@ describe('App', () => {
   beforeEach(() => {
     // whatever needs to happen befere each test
   })
-  // afterEach()
-  // beforeEach()
+  // afterAll()
+  // beforeAll()
 
   it.skip('displays the correct types', () => {
     // it renders Health text
