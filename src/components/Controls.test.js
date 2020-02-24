@@ -29,5 +29,8 @@ describe('Controls', () => {
     const button = wrapper.queryByText('exercise')
     rtl.fireEvent.click(button)
     expect(spy).toBeCalled()
+
   })
+  // we could alto test that UI changes
+  // if that were the case
 })
