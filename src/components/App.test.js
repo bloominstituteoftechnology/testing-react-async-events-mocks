@@ -2,7 +2,8 @@ import React from 'react'
 import App from './App'
 import * as rtl from '@testing-library/react'
 
-// 1st arg is the PATH
+// 1st arg is the PATH (axios)
+// 2nd arg is callaback that returns axios replacement
 jest.mock('axios', () => {
   // the callback retuns something
   // we return the "new", artificial axios module
