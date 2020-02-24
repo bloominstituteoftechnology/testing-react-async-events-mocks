@@ -26,4 +26,10 @@ describe('App', () => {
     expect(button).toBeInTheDocument()
     expect(button).toBeVisible()
   })
+
+  it('displays the correct name', async () => {
+    const wrapper = rtl.render(<App />)
+    const fullName = await wrapper.findByText('Amin Hasan')
+    expect(fullName).toBeInTheDocument()
+  })
 })

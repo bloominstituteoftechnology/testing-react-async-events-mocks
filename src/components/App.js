@@ -15,7 +15,7 @@ export default function App() {
       .then(res => {
         setName(`${res.data.fname} ${res.data.lname}`)
       })
-  })
+  }, [])
 
   const actions = {
     exercise() {
