@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.Player {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 4px solid greenyellow;
+  padding: 10px;
+  margin: 20px;
+  border-radius: 25px;
+  box-shadow: 10px 10px 38px -30px rgba(0,0,0,0.57);
+}
+
+.Controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+button {
+  margin-bottom: 8px;
+  height: 25px;
+  border-radius: 5px;
+  border: 1px dashed #db2c80;
+}
+
+.points {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.fancy {
+  font-family: 'Cedarville Cursive', cursive;
+  font-size: 1.5em;
+}
