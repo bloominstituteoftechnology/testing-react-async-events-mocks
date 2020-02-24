@@ -3,8 +3,6 @@ import Display from './Display'
 import Controls from './Controls'
 import playerContext from '../contexts/player'
 
-// imagine this is a deeply nested component
-// and we don't want to hand down the props manually
 export default function Player() {
   const { scores, name } = useContext(playerContext)
   return (
