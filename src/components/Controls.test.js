@@ -6,9 +6,8 @@ describe('Controls', () => {
   afterEach(rtl.cleanup)
 
   it('displays the correct button', () => {
-    const spy = jest.fn()
     const actions = {
-      exercise: spy
+      exercise: Function.prototype
     }
 
     const wrapper = rtl.render(
