@@ -10,19 +10,19 @@ describe('App', () => {
   // afterEach()
   // beforeEach()
 
-  it('displays the correct types', () => {
+  it.skip('displays the correct types', () => {
     // it renders Health text
     // it renders Morale text
     // QUESTIONABLE TEST ?
   })
 
-  it('displays the correct data', () => {
+  it.skip('displays the correct data', () => {
     // it renders 100 for Health
     // it renders 100 for Health
     // QUESTIONABLE TEST ?
   })
 
-  it('displays the correct button', () => {
+  it.skip('displays the correct button', () => {
     // it render specifically
     // exercise, eatJunkFood and catchUpWithFriends
     // QUESTIONABLE TEST ?
@@ -32,7 +32,7 @@ describe('App', () => {
     // want to do it?
   })
 
-  it('displays the correct name starting with the API data', async () => {
+  it.skip('displays the correct name starting with the API data', async () => {
 
   })
 })
