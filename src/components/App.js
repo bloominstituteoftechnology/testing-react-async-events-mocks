@@ -1,10 +1,21 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Player from './Player'
 import playerContext from '../contexts/player'
+import axios from 'axios'
 
-export default function App({ name }) {
+const apiURL = 'http://localhost:4000/api/friends'
+
+export default function App() {
   const [health, setHealth] = useState(100)
   const [morale, setMorale] = useState(100)
+  const [name, setName] = useState('')
+
+  useEffect(() => {
+    axios.get(apiURL + '/1')
+      .then(res => {
+        setName(`${res.data.fname} ${res.data.lname}`)
+      })
+  })
 
   const actions = {
     exercise() {
