@@ -7,7 +7,7 @@ const getStyle = points => ({
 export default function Display({ type, data }) {
   return (
     <div className='Display'>
-      {type} is at&nbsp;
+      {type.toUpperCase()} is at&nbsp;
 
       <span
         style={getStyle(data)}

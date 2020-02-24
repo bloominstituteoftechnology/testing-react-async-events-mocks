@@ -18,7 +18,7 @@ describe('Display component', () => {
 
   it('displays the correct type', () => {
     // grab an element
-    const theType = wrapper.queryByText(/Happiness/)
+    const theType = wrapper.queryByText(/HAPPINESS/)
     // run assertions
     expect(theType).toBeInTheDocument()
     expect(theType).toBeVisible()
