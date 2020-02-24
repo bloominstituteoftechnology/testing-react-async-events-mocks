@@ -64,7 +64,13 @@ describe('App', () => {
     expect(morale).toBeVisible()
   })
 
-  it.skip('displays the correct name starting with the API data', async () => {
+  it('displays the correct name starting with the API data', async () => {
+    // getByText will crash the test
+    // queryByText will have the "amin" varible be null
 
+    // to wait for Amin, use await keyword and the "findBy"
+    const amin = await wrapper.findByText('Amin Hasan')
+    expect(amin).toBeInTheDocument()
+    expect(amin).toBeVisible()
   })
 })
