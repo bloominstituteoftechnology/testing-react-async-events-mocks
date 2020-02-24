@@ -3,9 +3,11 @@ import App from './App'
 import * as rtl from '@testing-library/react'
 
 describe('App', () => {
+  let wrapper;
+
   afterEach(rtl.cleanup)
   beforeEach(() => {
-    // whatever needs to happen befere each test
+    wrapper = rtl.render(<App />)
   })
   // afterAll()
   // beforeAll()
@@ -29,7 +31,32 @@ describe('App', () => {
   })
 
   it('clicking eat junk food changes health and morale', () => {
-    // want to do it?
+    // setup and initial sanity checks
+    let stats = wrapper.queryAllByText('100')
+    let [health, morale] = stats;
+    expect(stats).toHaveLength(2)
+    expect(health).toBeInTheDocument()
+    expect(morale).toBeInTheDocument()
+
+    // queryByEtc -> returns null if thing not there
+    // getByEtc   -> fails the test straight up if not there
+    const button = wrapper.getByText(/eatjunkfood/i)
+    rtl.fireEvent.click(button)
+
+    // THE REAL TEST STARTS NOW
+    // DID MORALE AND HEALTH CHANGE CORRECTLY???????
+    
+    // 1 grab a text of 101 (for morale)
+    // 2 grab a text of 90 (for health)
+    // assert they're there and visible!!!
+    health = wrapper.getByText('90')
+    morale = wrapper.getByText('101')
+
+    expect(health).toBeInTheDocument()
+    expect(health).toBeVisible()
+
+    expect(morale).toBeInTheDocument()
+    expect(morale).toBeVisible()
   })
 
   it.skip('displays the correct name starting with the API data', async () => {
