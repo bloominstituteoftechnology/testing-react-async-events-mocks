@@ -2,6 +2,13 @@ import React from 'react'
 import App from './App'
 import * as rtl from '@testing-library/react'
 
+jest.mock(() => {
+  // the callback retuns something
+  return 
+})
+
+// what are we replacing for the test? axios
+
 describe('App', () => {
   let wrapper;
 
@@ -69,6 +76,10 @@ describe('App', () => {
     // queryByText will have the "amin" varible be null
 
     // to wait for Amin, use await keyword and the "findBy"
+
+    // TO FREAKIN' SLOW
+    // we shall replace axios with something
+    // that behaves the same way, for the purpose of the test
     const amin = await wrapper.findByText('Amin Hasan')
     expect(amin).toBeInTheDocument()
     expect(amin).toBeVisible()
