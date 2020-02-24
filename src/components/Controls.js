@@ -9,7 +9,7 @@ function withActions(Component)  {
   }
 }
 
-export default withActions(Controls)
+export default withActions(Controls) // "connecting the Controls to ctx"
 
 export function Controls({ actions }) {
   return (
