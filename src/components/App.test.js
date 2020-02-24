@@ -2,7 +2,7 @@ import React from 'react'
 import App from './App'
 import * as rtl from '@testing-library/react'
 
-describe.skip('App', () => {
+describe('App', () => {
   afterEach(rtl.cleanup)
   beforeEach(() => {
     // whatever needs to happen befere each test
