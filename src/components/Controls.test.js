@@ -21,7 +21,6 @@ describe('Controls', () => {
     const actions = {
       exercise: spy
     }
-
     const wrapper = rtl.render(
       <Controls actions={actions} />
     )
