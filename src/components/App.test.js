@@ -2,9 +2,16 @@ import React from 'react'
 import App from './App'
 import * as rtl from '@testing-library/react'
 
-jest.mock(() => {
+// 1st arg is the PATH
+jest.mock('axios', () => {
   // the callback retuns something
-  return 
+  // we return the "new", artificial axios module
+  // { get: Function returns promise, post: Funcion... }
+  return {
+    get: (url) => {
+      return Promise.resolve({ data: { fname: "Amin", lname: "Hasan" } })
+    }
+  }
 })
 
 // what are we replacing for the test? axios
@@ -48,16 +55,16 @@ describe('App', () => {
     // queryByEtc -> returns null if thing not there
     // getByEtc   -> fails the test straight up if not there
     const button = wrapper.getByText(/eatjunkfood/i)
-  
+
     // make sure 90 & 101 not there yet
-  
+
     rtl.fireEvent.click(button)
 
     // make sure the 100s not there anymore
 
     // THE REAL TEST STARTS NOW
     // DID MORALE AND HEALTH CHANGE CORRECTLY???????
-    
+
     // 1 grab a text of 101 (for morale)
     // 2 grab a text of 90 (for health)
     // assert they're there and visible!!!
