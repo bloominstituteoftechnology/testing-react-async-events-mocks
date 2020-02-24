@@ -2,8 +2,15 @@ import React from 'react'
 import App from './App'
 import * as rtl from '@testing-library/react'
 
-describe('App', () => {
+jest.mock('axios', () => {
+  return {
+    get: url => {
+      return Promise.resolve({ data: { fname: 'Amin', lname: 'Hasan' } })
+    }
+  }
+})
 
+describe('App', () => {
   afterEach(rtl.cleanup)
 
   it('displays the correct types', () => {
