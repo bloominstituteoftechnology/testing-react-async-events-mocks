@@ -8,11 +8,15 @@ describe('Display component', () => {
   // every time we mount "Display"
   afterEach(rtl.cleanup)
 
-  it('displays the correct type', () => {
-    // setup! Mount the thing
-    const wrapper = rtl.render(
-      <Display type='Happiness' data={199} />
+  let wrapper;
+
+  beforeEach(() => {
+    wrapper = rtl.render(
+      <Display type='Happiness' data={244} />
     )
+  })
+
+  it('displays the correct type', () => {
     // grab an element
     const theType = wrapper.queryByText(/Happiness/)
     // run assertions
@@ -21,9 +25,7 @@ describe('Display component', () => {
   })
 
   it('displays the correct data', () => {
-    const wrapper = rtl.render(
-      <Display type="thing" data={244}/>
-    )
+    // recreate wrapper if wish to change the props
     const theData = wrapper.queryByText(/244/i)
     expect(theData).toBeInTheDocument()
     expect(theData).toBeVisible()
