@@ -20,7 +20,12 @@ describe('Display component', () => {
     expect(theType).toBeVisible()
   })
 
-  it.skip('displays the correct data', () => {
-
+  it('displays the correct data', () => {
+    const wrapper = rtl.render(
+      <Display type="thing" data={244}/>
+    )
+    const theData = wrapper.queryByText(/244/i)
+    expect(theData).toBeInTheDocument()
+    expect(theData).toBeVisible()
   })
 })
